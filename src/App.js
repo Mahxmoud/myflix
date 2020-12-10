@@ -6,7 +6,7 @@ import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 function App() {
 
-  const [movies, setMovies] = useState([
+  const list = [
     {
       title: "Avengers: Endgame",
       description:
@@ -64,7 +64,7 @@ function App() {
       rate: 4,
     },
   ]
-  )
+  const [movies, setMovies] = useState(list)
 
   return (
     <div className='container-fluid movie-app'>
@@ -72,7 +72,7 @@ function App() {
         <MovieListHeading
           heading='Myflix'
           setMovies={setMovies}
-          movies={movies}
+          list={list}
         />
       </div>
       <div className='row'>

@@ -12,12 +12,12 @@ const MovieListHeading = (props) => {
     // Search Function
     const [searchValue, setSearchValue] = useState('');
     useEffect(() => {
-        var newSearchedMovies = props.movies.filter(result => result.title.toUpperCase().includes(searchValue.toUpperCase()) && result.rate >= rating)
+        var newSearchedMovies = props.list.filter(result => result.title.toUpperCase().includes(searchValue.toUpperCase()) && result.rate >= rating)
         props.setMovies(newSearchedMovies)
     },[searchValue, rating])
 
     return (
-        <div className='row heading'>
+        <div className='row heading'> 
             <h1>{props.heading}</h1>
             <SearchBox
                 searchValue={searchValue}
