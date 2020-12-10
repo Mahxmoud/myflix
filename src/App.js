@@ -79,7 +79,6 @@ function App() {
       <div className='row'>
         <MovieList
           movies={movies} />
-        <AddMovie/>
       </div>
     </div>
   );
