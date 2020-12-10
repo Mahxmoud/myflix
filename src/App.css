@@ -2,33 +2,32 @@ body {
 	background: #141414;
 	color: #ffffff;
 }
-
-.movie-app > .row {
-	overflow-x: auto;
-	flex-wrap: nowrap;
+.cards{
+	display: flex;
+	justify-content: start;
+	flex-wrap: wrap;
 }
-.image-container {
-	position: relative;
-	transition: transform 0.2s;
-}
-
-.image-container:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-}
-
-.image-container:hover .overlay {
-	opacity: 1;
+.card{
+	display: flex;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
 }
 
-.overlay {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.8);
-	width: 100%;
-	transition: 0.5s ease;
-	opacity: 0;
-	bottom: 0;
-	font-size: 20px;
-	padding: 20px;
-	text-align: center;
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.addMovie{
+	justify-content: center;
+	align-items: center;
+	
+}
+.plus{
+	width: 40%;
+font-size: 60px;
+	font-weight: bold;
+text-align: center;
 }

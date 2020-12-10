@@ -1,9 +1,11 @@
 
-import './App.css';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieList from './components/MovieList.jsx'
-import AddFavourite from './components/AddFavorite.jsx';
+import './App.css';
+import MovieList from './components/MovieList';
+import MovieListHeading from './components/MovieListHeading';
+import SearchBox from './components/SearchBox';
+
 function App() {
   const [movies, setmovies] = useState([
     {
@@ -64,13 +66,17 @@ function App() {
     },
   ]
   )
-  return (
-    <div className='container-fluid movie-app'>
-      <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieList movies={movies} favouriteComponent={AddFavourite} />
+    return (
+      <div className='container-fluid movie-app'>
+        <div className='row d-flex align-items-center mt-4 mb-4'>
+          <MovieListHeading heading='Myflix' />
+          {/* <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+        </div>
+        <div className='row'>
+          <MovieList movies={movies} />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-export default App;
+  export default App;
