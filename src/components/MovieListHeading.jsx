@@ -25,8 +25,11 @@ const MovieListHeading = (props) => {
             <StarRatings
                 rating={rating}
                 starRatedColor="yellow"
+                starHoverColor='yellow'
                 changeRating={changeRating}
                 numberOfStars={5}
+                starDimension='40px'
+                starSpacing='2px'
                 name='rating'
             />
         </div>

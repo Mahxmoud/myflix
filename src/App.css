@@ -41,3 +41,8 @@ font-size: 60px;
 	font-weight: bold;
 text-align: center;
 }
+.card-footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

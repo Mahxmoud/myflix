@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-
+import StarRatings from 'react-star-ratings';
+import AddMovie from './AddMovie'
 const MovieList = (props) => {
     return (
         <div className='cards'>
@@ -12,13 +13,20 @@ const MovieList = (props) => {
                         <Card.Title className='title'>{movie.title}</Card.Title>
                         <Card.Text className='description'>
                             {movie.description}
-                        </Card.Text>
-                        <Button variant="primary" >Watch now</Button>
+                        </Card.Text><StarRatings className='movie-rate'
+                            rating={movie.rate}
+                            starRatedColor="yellow"
+                            numberOfStars={5}
+                            starDimension='25px'
+                            starSpacing='0'
+                            name='rating'
+                        /> <br/>
+                        <Button className='mt-5' variant="warning" >Watch now</Button>
                     </Card.Body>
                 </Card>
             ))}
-            <Card style={{ width: '18rem', margin: '23px' , backgroundColor: '#282C34' }} className='addMovie'>
-                <Button variant="primary" className='plus' >+</Button>
+            <Card style={{ width: '18rem', margin: '23px', backgroundColor: '#282C34' }} className='addMovie'>
+                <Button variant="warning" className='plus'>+</Button>
             </Card>
         </div>
     );

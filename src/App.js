@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
+import AddMovie from './components/AddMovie'
 function App() {
 
   const list = [
@@ -78,6 +79,7 @@ function App() {
       <div className='row'>
         <MovieList
           movies={movies} />
+        <AddMovie/>
       </div>
     </div>
   );
