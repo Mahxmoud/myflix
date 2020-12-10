@@ -9,6 +9,9 @@ body {
 	justify-content: space-between;	
 	align-items: center;
 }
+.searchbox{
+	justify-self: end;
+}
 .cards{
 	display: flex;
 	justify-content: start;
@@ -37,7 +40,4 @@ body {
 font-size: 60px;
 	font-weight: bold;
 text-align: center;
-}
-.searchbox{
-	align-self: flex-end;
 }

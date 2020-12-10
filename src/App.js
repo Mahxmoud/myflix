@@ -1,14 +1,12 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
-
-
 function App() {
 
-  const [movies, setmovies] = useState([
+  const [movies, setMovies] = useState([
     {
       title: "Avengers: Endgame",
       description:
@@ -68,19 +66,18 @@ function App() {
   ]
   )
 
-  const [searchValue, setSearchValue] = useState('');
-  const changeSearch = (newSearch) => {
-    setSearchValue(
-      newSearch = movies.filter(result => movies.name.include(searchValue) && movies.rate >= rating )
-    )
-  }
   return (
     <div className='container-fluid movie-app'>
       <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieListHeading heading='Myflix' />
+        <MovieListHeading
+          heading='Myflix'
+          setMovies={setMovies}
+          movies={movies}
+        />
       </div>
       <div className='row'>
-        <MovieList movies={movies} />
+        <MovieList
+          movies={movies} />
       </div>
     </div>
   );
