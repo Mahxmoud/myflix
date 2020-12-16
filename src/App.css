@@ -14,7 +14,7 @@ body {
 }
 .cards{
 	display: flex;
-	justify-content: start;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 .card{
@@ -45,4 +45,11 @@ text-align: center;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.modal-title, .modal-body{
+	color: #ffffff;
+}
+.modal-title, .modal-body{
+	color: #141414;
+
 }

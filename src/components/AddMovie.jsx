@@ -1,35 +1,70 @@
-import React from 'react'
-import { Form, Button, Card } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Button, Modal, Form } from 'react-bootstrap';
 
-export default function AddMovie() {
-    return (
-        <div>
-            <Card style={{ width: '18rem', margin: '23px', backgroundColor: '#282C34' }} >
-                <Form style={{ width: '80%', padding: '15px' }}>
-                    <Form.Label>Movie Name</Form.Label>
-                    <Form.Control type="text" placeholder="Movie Title..." name='title'/>
-                    <Form.Group controlId="formBasicText">
-                        <Form.Label>Poster URL</Form.Label>
-                        <Form.Control type="text" placeholder="Poster URL..." />
-                    </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Rating</Form.Label>
-                        <Form.Control as="select">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </Form.Control>
-                    </Form.Group>
-                    <Button variant="warning" type="submit">
-                        add</Button>
-                </Form></Card>
-
-        </div>
+function AddMovie(props) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [newMovie, setNewMovie] = useState(
+        {
+            title: "",
+            description:
+                "",
+            posterUrl:
+                "",
+            rate: 1,
+        }
     )
+
+    return (
+        <>
+            <Button variant="warning" onClick={handleShow} className='plus'>+</Button>
+            <Modal
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add new movie to the list</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form style={{ width: '80%', padding: '15px' }}>
+                        <Form.Label>Movie Name</Form.Label>
+                        <Form.Control type="text" placeholder="Movie Title..."  onChange={(e) => setNewMovie({ ...newMovie, title: e.target.value })} />
+                        <Form.Group controlId="formBasicText">
+                            <Form.Label>Poster URL</Form.Label>
+                            <Form.Control type="text" placeholder="Poster URL..." onChange={(e) => setNewMovie({ ...newMovie, posterUrl: e.target.value })} />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control as="textarea" rows={3} onChange={(e) => setNewMovie({ ...newMovie, description: e.target.value })} />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlSelect1">
+                            <Form.Label>Rating</Form.Label>
+                            <Form.Control as="select" onChange={(e) => setNewMovie({ ...newMovie, rate: e.target.value })}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </Form.Control>
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Back
+                    </Button>
+                    <Button variant="warning" onClick={() => {
+                        props.setAppNewMovie(newMovie)
+                        handleClose()
+                    }}>Add</Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
 }
+
+export default AddMovie

@@ -1,13 +1,11 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
-import AddMovie from './components/AddMovie'
 function App() {
 
-  const list = [
+  const [list, setList] = useState([
     {
       title: "Avengers: Endgame",
       description:
@@ -64,8 +62,29 @@ function App() {
         "https://1.bp.blogspot.com/__U6Of0VhREw/TC3GImGPVLI/AAAAAAAAABM/p63OnE2p9Pk/w1200-h630-p-k-no-nu/charlie_chocolate_factory.jpg",
       rate: 4,
     },
-  ]
+  ])
   const [movies, setMovies] = useState(list)
+  const [appNewMovie, setAppNewMovie] = useState('')
+  console.log('this appnewmovie before useeffect: ', appNewMovie)
+  useEffect(() => {
+    console.log('hello from useEffect this app new movie: ', appNewMovie)
+    setList(
+      [...list, appNewMovie]
+    )
+    setMovies(
+      list
+    )
+  }, [appNewMovie])
+  useEffect(
+    () => {
+      if (list[list.length-1]=== '')
+      setList(
+        list.slice(0,-1)
+      )
+    }, [list])
+
+  console.log(list[list.length - 1])
+  console.log('hello ')
 
   return (
     <div className='container-fluid movie-app'>
@@ -78,7 +97,9 @@ function App() {
       </div>
       <div className='row'>
         <MovieList
-          movies={movies} />
+          movies={movies}
+          setAppNewMovie={setAppNewMovie}
+        />
       </div>
     </div>
   );
