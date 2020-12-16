@@ -28,6 +28,7 @@ const MovieList = (props) => {
             <Card style={{ width: '18rem', margin: '23px', backgroundColor: '#282C34' }} className='addMovie'>
                 <AddMovie
                     setAppNewMovie={props.setAppNewMovie}
+                    setFirstRender={props.setFirstRender}
                 />
             </Card>
 

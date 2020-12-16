@@ -12,7 +12,7 @@ function AddMovie(props) {
                 "",
             posterUrl:
                 "",
-            rate: 1,
+            rate: 0,
         }
     )
 
@@ -32,7 +32,7 @@ function AddMovie(props) {
                 <Modal.Body>
                     <Form style={{ width: '80%', padding: '15px' }}>
                         <Form.Label>Movie Name</Form.Label>
-                        <Form.Control type="text" placeholder="Movie Title..."  onChange={(e) => setNewMovie({ ...newMovie, title: e.target.value })} />
+                        <Form.Control type="text" placeholder="Movie Title..." onChange={(e) => setNewMovie({ ...newMovie, title: e.target.value })} />
                         <Form.Group controlId="formBasicText">
                             <Form.Label>Poster URL</Form.Label>
                             <Form.Control type="text" placeholder="Poster URL..." onChange={(e) => setNewMovie({ ...newMovie, posterUrl: e.target.value })} />
@@ -43,7 +43,8 @@ function AddMovie(props) {
                         </Form.Group>
                         <Form.Group controlId="exampleForm.ControlSelect1">
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control as="select" onChange={(e) => setNewMovie({ ...newMovie, rate: e.target.value })}>
+                            <Form.Control as="select" onChange={(e) => setNewMovie({ ...newMovie, rate: Number(e.target.value) })}>
+                                <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -58,8 +59,10 @@ function AddMovie(props) {
                         Back
                     </Button>
                     <Button variant="warning" onClick={() => {
+                        props.setFirstRender(false)
                         props.setAppNewMovie(newMovie)
                         handleClose()
+                        setNewMovie('')
                     }}>Add</Button>
                 </Modal.Footer>
             </Modal>
@@ -68,3 +71,6 @@ function AddMovie(props) {
 }
 
 export default AddMovie
+// setAppNewMovie(
+//     {}
+// )

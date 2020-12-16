@@ -65,26 +65,21 @@ function App() {
   ])
   const [movies, setMovies] = useState(list)
   const [appNewMovie, setAppNewMovie] = useState('')
-  console.log('this appnewmovie before useeffect: ', appNewMovie)
+  const [firstRender, setFirstRender] = useState(true)
+
   useEffect(() => {
-    console.log('hello from useEffect this app new movie: ', appNewMovie)
-    setList(
-      [...list, appNewMovie]
-    )
+    if (firstRender === false) {
+      setList(
+        [...list, appNewMovie]
+      )
+    }
+  }, [appNewMovie])
+
+  useEffect(() => {
     setMovies(
       list
     )
-  }, [appNewMovie])
-  useEffect(
-    () => {
-      if (list[list.length-1]=== '')
-      setList(
-        list.slice(0,-1)
-      )
-    }, [list])
-
-  console.log(list[list.length - 1])
-  console.log('hello ')
+   }, [list])
 
   return (
     <div className='container-fluid movie-app'>
@@ -99,6 +94,8 @@ function App() {
         <MovieList
           movies={movies}
           setAppNewMovie={setAppNewMovie}
+          setFirstRender={setFirstRender}
+
         />
       </div>
     </div>
