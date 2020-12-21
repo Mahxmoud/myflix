@@ -13,6 +13,8 @@ function AddMovie(props) {
             posterUrl:
                 "",
             rate: 0,
+            trailerUrl:
+                ""
         }
     )
 
@@ -36,6 +38,10 @@ function AddMovie(props) {
                         <Form.Group controlId="formBasicText">
                             <Form.Label>Poster URL</Form.Label>
                             <Form.Control type="text" placeholder="Poster URL..." onChange={(e) => setNewMovie({ ...newMovie, posterUrl: e.target.value })} />
+                        </Form.Group>
+                        <Form.Group controlId="formBasicText">
+                            <Form.Label>Trailer URL</Form.Label>
+                            <Form.Control type="text" placeholder="Trailer URL..." onChange={(e) => setNewMovie({ ...newMovie, trailerUrl: e.target.value })} />
                         </Form.Group>
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Description</Form.Label>
