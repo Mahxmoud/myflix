@@ -3,10 +3,10 @@ import { Button, Card } from 'react-bootstrap';
 import StarRatings from 'react-star-ratings';
 import { Link } from "react-router-dom";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, id }) {
     return (
         <>
-            <Link to={movie.title} style={{ color: '#fff', textDecoration: 'none' }}>
+            <Link to={`${id}`} style={{ color: '#fff', textDecoration: 'none' }}>
                 <Card style={{ width: '18rem', margin: '23px', backgroundColor: '#282C34', height: '60%' }}>
                     <Card.Img variant="top" src={movie.posterUrl} alt='' style={{ height: '30%' }} />
                     <Card.Body>

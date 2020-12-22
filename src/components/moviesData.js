@@ -6,7 +6,7 @@ const moviesData = [
         posterUrl:
             "https://thenewsfetcher.com/wp-content/uploads/2020/02/817597-avengers-endgame-1024x576.jpg",
         rate: 3,
-        trailerUrl: "https://www.youtube.com/watch?v=TcMBFSGVi1c"
+        trailerUrl: "https://www.youtube.com/embed/TcMBFSGVi1c"
     },
     {
         title: "The Shawshank Redemption",
@@ -15,7 +15,7 @@ const moviesData = [
         posterUrl:
             "https://traditiononline.org/wp-content/uploads/2019/11/13-Best-Shawshank.jpg",
         rate: 5,
-        trailerUrl: "https://www.youtube.com/watch?v=6hB3S9bIaco"
+        trailerUrl: "https://www.youtube.com/embed/6hB3S9bIaco"
     },
     {
         title: "In Time",
@@ -24,7 +24,7 @@ const moviesData = [
         posterUrl:
             "https://tirlapaula.files.wordpress.com/2014/04/in-time-2011-1024x768-761788.jpeg",
         rate: 2,
-        trailerUrl: "https://www.youtube.com/watch?v=YRSBiTF3wNw&t=13s"
+        trailerUrl: "https://www.youtube.com/embed/YRSBiTF3wNw?controls=0"
     },
     {
         title: "Pulp Fiction",
@@ -33,7 +33,7 @@ const moviesData = [
         posterUrl:
             "https://townsquare.media/site/295/files/2019/10/miramax.jpg?w=980&q=75",
         rate: 4,
-        trailerUrl: ""
+        trailerUrl: "https://www.youtube.com/embed/Y6YBKdmOlM8"
     },
     {
         title: "Titanic",
@@ -42,7 +42,7 @@ const moviesData = [
         posterUrl:
             "https://scontent.ftun1-2.fna.fbcdn.net/v/t1.0-9/117357203_3544561898896579_7992014078248731844_n.jpg?_nc_cat=101&ccb=2&_nc_sid=e3f864&_nc_ohc=hiK0pNaObHoAX_RYe4b&_nc_ht=scontent.ftun1-2.fna&oh=7c83d2b14156da56d333bee80d1782ed&oe=5FF3E5FB",
         rate: 5,
-        trailerUrl: "https://www.youtube.com/watch?v=Y6YBKdmOlM8"
+        trailerUrl: "https://www.youtube.com/embed/cIJ8ma0kKtY"
     },
     {
         title: "Godzilla: King of the Monsters",
@@ -51,7 +51,7 @@ const moviesData = [
         posterUrl:
             "https://i.dailymail.co.uk/1s/2019/05/26/14/13976618-0-image-a-44_1558878671094.jpg",
         rate: 3,
-        trailerUrl: "https://www.youtube.com/watch?v=QFxN2oDKk0E"
+        trailerUrl: "https://www.youtube.com/embed/QFxN2oDKk0E"
     },
     {
         title: "Charlie and the Chocolate Factory",
@@ -60,7 +60,7 @@ const moviesData = [
         posterUrl:
             "https://1.bp.blogspot.com/__U6Of0VhREw/TC3GImGPVLI/AAAAAAAAABM/p63OnE2p9Pk/w1200-h630-p-k-no-nu/charlie_chocolate_factory.jpg",
         rate: 4,
-        trailerUrl: "https://www.youtube.com/watch?v=OFVGCUIXJls&t=6s"
+        trailerUrl: "https://www.youtube.com/embed/OFVGCUIXJls"
     }
 ]
 export default moviesData
