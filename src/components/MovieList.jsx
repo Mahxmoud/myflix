@@ -9,6 +9,7 @@ const MovieList = (props) => {
                 <MovieCard
                     movie={movie}
                     key={index}
+                    id={index}
                 />
             ))}
             <Card style={{ width: '18rem', margin: '23px', backgroundColor: '#282C34' }} className='addMovie'>

@@ -14,6 +14,7 @@ const MovieListHeading = (props) => {
     useEffect(() => {
         var newSearchedMovies = props.list.filter(result => result.title.toUpperCase().includes(searchValue.toUpperCase()) && result.rate >= rating)
         props.setMovies(newSearchedMovies)
+            // eslint-disable-next-line
     },[searchValue, rating])
 
     return (

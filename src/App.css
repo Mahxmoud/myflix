@@ -2,55 +2,67 @@ body {
 	background: #141414;
 	color: #ffffff;
 }
-.heading{
+
+.heading {
 	padding-left: 30px;
 	display: flex;
 	width: 100%;
-	justify-content: space-between;	
+	justify-content: space-between;
 	align-items: center;
 }
-.searchbox{
+
+.searchbox {
 	justify-self: end;
 }
-.cards{
+
+.cards {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 }
-.card{
+
+.card {
 	display: flex;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  cursor: pointer;
-  min-height: 600px;
+	border-radius: 4px;
+	background: #fff;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+	transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+	cursor: pointer;
+	min-height: 600px;
 }
 
-.card:hover{
-     transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+
+.card:hover {
+	transform: scale(1.06);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
-.addMovie{
+
+.addMovie {
 	justify-content: center;
 	align-items: center;
-	
+
 }
-.plus{
+
+.plus {
 	width: 40%;
-font-size: 60px;
+	font-size: 60px;
 	font-weight: bold;
-text-align: center;
+	text-align: center;
 }
-.card-footer{
+
+.card-footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.modal-title, .modal-body{
+
+.modal-title,
+.modal-body {
 	color: #ffffff;
 }
-.modal-title, .modal-body{
+
+.modal-title,
+.modal-body {
 	color: #141414;
 
 }
